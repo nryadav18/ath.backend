@@ -14,7 +14,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(cors({
-  origin: 'https://ath.vercel.app',
+  origin: 'https://adityatransporthub.vercel.app/',
   credentials: true
 }));
 
