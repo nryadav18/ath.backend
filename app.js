@@ -14,10 +14,21 @@ var app = express();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://adityatransporthub.vercel.app',
+];
+
 app.use(cors({
-  origin: 'https://adityatransporthub.vercel.app/',
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  credentials: true,
 }));
 
 app.use(bp.json())
