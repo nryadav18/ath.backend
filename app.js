@@ -11,9 +11,6 @@ const { default: mongoose } = require('mongoose');
 var app = express();
 
 // view engine setup
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 const allowedOrigins = [
   'http://localhost:5173',
   'https://adityatransporthub.vercel.app',
@@ -30,7 +27,9 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
-
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(bp.json())
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
