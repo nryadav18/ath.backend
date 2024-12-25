@@ -43,7 +43,7 @@ app.listen(port, function () {
   console.log(`Server is Running at ${port} Successfully`)
 })
 
-mongoose.connect("mongodb+srv://Raj:Rajeswar143@cluster0.f9qho.mongodb.net/")
+mongoose.connect("mongodb+srv://Raj:EsI7YhOVR13LSQpV@cluster0.f9qho.mongodb.net/")
   .then(resp => {
     console.log("DB Connected Successfully")
   })
