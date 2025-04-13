@@ -56,6 +56,53 @@ app.use(function (req, res, next) {
   next(createError(404));
 });
 
+app.get('/', (req, res) => {
+    res.send(`
+      <html>
+        <head>
+          <title>ATH Backend</title>
+          <style>
+            body {
+              background: #f5f7fa;
+              font-family: 'Segoe UI', sans-serif;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              margin: 0;
+            }
+            .container {
+              text-align: center;
+              background: white;
+              padding: 40px;
+              border-radius: 16px;
+              box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            }
+            h1 {
+              color: #3b82f6;
+              font-size: 32px;
+            }
+            p {
+              color: #6b7280;
+              font-size: 18px;
+              margin-top: 10px;
+            }
+            .emoji {
+              font-size: 48px;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="emoji">🚀</div>
+            <h1>ATH Backend Server</h1>
+            <p>✅ Running smoothly on port ${PORT}</p>
+          </div>
+        </body>
+      </html>
+    `);
+});
+
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
