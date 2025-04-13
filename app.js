@@ -51,11 +51,6 @@ mongoose.connect("mongodb+srv://Raj:EsI7YhOVR13LSQpV@cluster0.f9qho.mongodb.net/
     console.log(err)
   })
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
-
 app.get('/', (req, res) => {
     res.send(`
       <html>
@@ -101,6 +96,11 @@ app.get('/', (req, res) => {
         </body>
       </html>
     `);
+});
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  next(createError(404));
 });
 
 // error handler
