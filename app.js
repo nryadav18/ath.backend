@@ -7,14 +7,14 @@ var ApiRouter = require('./routers/api-router')
 var cors = require('cors')
 var bp = require('body-parser');
 const { default: mongoose } = require('mongoose');
-
+require('dotenv').config();
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(cors({
-  origin: 'https://ath.vercel.app',
+  origin: ['https://ath.vercel.app'],
   credentials: true
 }));
 
@@ -32,7 +32,7 @@ app.listen(port, function () {
   console.log(`Server is Running at ${port} Successfully`)
 })
 
-mongoose.connect("mongodb+srv://Raj:Rajeswar143@cluster0.f9qho.mongodb.net/")
+mongoose.connect(process.env.MONGODB_URL)
   .then(resp => {
     console.log("DB Connected Successfully")
   })
