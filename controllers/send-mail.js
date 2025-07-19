@@ -10,13 +10,13 @@ const mailSender = async(req, res) => {
     const Transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'cserajeswaryadav@gmail.com',
-            pass: 'onru vztf koxs rzlf'
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASSCODE
         }
     })   
 
     const MailOptions = {
-        from: 'cserajeswaryadav@gmail.com',
+        from: process.env.EMAIL_USER,
         to: req.body.email,
         subject: "Verify Your Email!",
         html: `<h2>Welcome to Aditya Transport Hub</h2><h3>Your <b>OTP to access ATH is:</h3><h1>${otp}</h1>`
