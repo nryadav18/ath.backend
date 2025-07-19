@@ -14,14 +14,14 @@ var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(cors({
-  origin: ['https://ath.vercel.app'],
-  credentials: true
-}));
 const allowedOrigins = [
   'http://localhost:5173',
   'https://adityatransporthub.vercel.app',
 ];
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 
 app.use(cors({
   origin: (origin, callback) => {
