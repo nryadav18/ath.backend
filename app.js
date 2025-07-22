@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/", ApiRouter)
 
-var port = 9000;
+var port = process.env.LOCAL_PORT;
 app.listen(port, function () {
   console.log(`Server is Running at ${port} Successfully`)
 })
