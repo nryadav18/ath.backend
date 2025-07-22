@@ -1,6 +1,6 @@
 <h1 align="center">Aditya Transport Hub - Backend</h1>
 
-  <img src="./outputs/server.png" width="100%" />
+  <img src="./outputs/serverOutput.png" width="100%" />
 
 <p align="center">
   🚍 <b>IoT-Enabled Smart Bus Tracking and Management Backend System</b> 🚍
