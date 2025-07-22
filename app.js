@@ -96,7 +96,7 @@ app.get('/', (req, res) => {
         </head>
         <body>
           <div class="container">
-            <div class="emoji">🚀</div>
+            <div class="emoji">🚌</div>
             <h1>ATH Backend Server</h1>
             <p>✅ Running smoothly on port ${port}</p>
           </div>
