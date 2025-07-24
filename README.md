@@ -37,17 +37,24 @@ This backend handles:
 
 ## 📦 Installation
 
+### Clone the repository
 ```bash
-# Clone the repository
 git clone https://github.com/nryadav18/ath.backend.git
 cd ath.backend
+```
 
-# Install dependencies
+### Install dependencies
+```bash
 npm install
+```
 
-# Set up environment variables
+### Set up environment variables
+#### Replace values in the .env file
+```bash
 cp .env.example .env
-# Replace values in the .env file
+```
 
-# Start the development server
+### Start the development server
+```bash
 npm run dev
+```
